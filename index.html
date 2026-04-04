@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jeeva Fastag</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Orange + Green gradient background */
+    background: linear-gradient(90deg, #0f9d58, #ff8c00);
+}
+
+/* Main box */
+.container {
+    text-align: center;
+}
+
+/* Heading box */
+.heading-box {
+    background-color:linear-gradient(90deg, #0f9d58, #ff8c00);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.heading-box h1 {
+    color: #080808;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Loading section */
+#loading {
+    margin-top: 20px;
+}
+
+/* Car animation */
+.car {
+    width: 100px;
+    position: relative;
+    animation: moveCar 2s linear infinite;
+}
+
+@keyframes moveCar {
+    0% { left: -100px; }
+    100% { left: 100px; }
+}
+
+/* Button (hidden first) */
+#startBtn {
+    display: none;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#startBtn:hover {
+    background-color: darkgreen;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Heading -->
+    <div class="heading-box">
+        <h1>JEEVA FASTAG </h1>
+        <h1>Service Center</h1>
+    </div>
+
+    <!-- Loading with moving car -->
+    <div id="loading">
+        <img src="https://i.ibb.co/bY68hMf/download-1.png"  class="car">
+        <p>Loading...</p>
+    </div>
+
+    <!-- Button appears after loading -->
+    <button id="startBtn" onclick="goToMain()">CLICK</button>
+
+</div>
+
+<script>
+    // Show button after 3 seconds
+    setTimeout(function() {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("startBtn").style.display = "inline-block";
+    }, 3000);
+
+    function goToMain() {
+        window.location.href = "fastagservice.html"; // change to your main website
+    }
+</script>
+
+</body>
+</html>
